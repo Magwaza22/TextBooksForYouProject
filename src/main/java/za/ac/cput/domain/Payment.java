@@ -13,9 +13,9 @@ public class Payment {
     private String Address;
     private String PaymentGateway;
 
-    private Payment(){
+    private Payment(Payment payment){
     }
-    private Payment (Payment builder) {
+    protected Payment (Builder builder) {
         this.PaymentID = builder.PaymentID;
         this.TransactionID = builder.TransactionID;
         this.PaymentMethod = builder.PaymentMethod;
@@ -27,6 +27,7 @@ public class Payment {
         this.PaymentGateway = builder.PaymentGateway;
 
     }
+
     public String getPaymentID() {
         return PaymentID;
     }
@@ -135,7 +136,7 @@ public class Payment {
         PaymentGateway = paymentGateway;
     }
 
-    public Builder copy(Payment p) {
+    public Payment copy(Payment p) {
         this.PaymentID= p.PaymentID;
         this.TransactionID= p.TransactionID;
         this.PaymentMethod= p.PaymentMethod;
