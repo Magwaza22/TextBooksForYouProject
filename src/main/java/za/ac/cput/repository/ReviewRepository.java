@@ -1,4 +1,4 @@
 package za.ac.cput.repository;
 
-public interface IReviewFactory {
+public class ReviewRepository {
 }

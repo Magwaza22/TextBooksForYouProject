@@ -78,7 +78,6 @@ public class Review {
 
     public void setReviewID(String reviewID) {
         this.reviewID = reviewID;
-
     }
 
     public void setRating(double rating) {
