@@ -13,6 +13,16 @@ public class Review {
 
     private Review(){
     }
+
+    protected Review (Review builder){
+        this.reviewID= builder.reviewID;
+        this.rating= builder.rating;
+        this.textReview= builder.textReview;
+        this.context=builder.context;
+        this.date = builder.date;
+
+    }
+
     public String getReviewID(){
         return reviewID;
     }
@@ -33,16 +43,6 @@ public class Review {
         return date;
     }
 
-
-
-    protected Review (Builder builder){
-        this.reviewID= builder.reviewID;
-        this.rating= builder.rating;
-        this.textReview= builder.textReview;
-        this.context=builder.context;
-        this.date = builder.date;
-
-    }
 
 
     @Override
@@ -78,11 +78,11 @@ public class Review {
 
     public void setReviewID(String reviewID) {
         this.reviewID = reviewID;
-
     }
 
     public void setRating(double rating) {
         this.rating = rating;
+
     }
 
     public void setTextReview(String textReview) {
@@ -97,6 +97,7 @@ public class Review {
         this.date = date;
     }
 
+   public Review build(){return new Review(this); }
 
 }
 
